@@ -1,0 +1,78 @@
+mysql:
+    image: registry.cn-beijing.aliyuncs.com/hfax/mysql:5.6
+    container_name: mysql
+    restart: always
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./mysql_dev/conf:/etc/mysql/conf.d
+      - ./mysql_dev/data:/var/lib/mysql
+      - ./mysql_dev/initdb:/docker-entrypoint-initdb.d
+    environment:
+        - TZ=Asia/Shanghai
+        - MYSQL_ROOT_PASSWORD=rootme
+        - MYSQL_DATABASE=default_data
+        - MYSQL_USER=risk
+        - MYSQL_PASSWORD=riskpassword
+    ports:
+        - 3306:3306
+
+redis:
+    image: registry.cn-beijing.aliyuncs.com/hfax/redis:2.8
+    container_name: redis
+    restart: always
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./redis_dev/conf:/conf
+    environment:
+        - TZ=Asia/Shanghai
+    command: redis-server /conf/redis.conf
+    ports:
+        - 6379:6379
+
+flower:
+    image: registry.cn-beijing.aliyuncs.com/hfax/flower
+    container_name: flower
+    restart: always
+    volumes:
+        - ./flower_dev:/flower
+    ports:
+        - 5555:5555
+    links:
+        - redis:redis_host
+    command: flower --address=0.0.0.0 --persistent=1 --db=flower/db.sqlite3 --broker=redis://:redispassword@redis_host:6379/11 --broker_api=redis://:redispassword@redis_host:6379/11
+
+
+splunk:
+    image: registry.cn-beijing.aliyuncs.com/hfax/splunk:6.3.3
+    container_name: splunk
+    restart: always
+    volumes:
+         - ./splunk_dev/data:/opt/splunk/etc
+         - ./splunk_dev/conf:/opt/splunk/var
+         - ./splunk_dev/indexes.conf:/opt/splunk/etc/system/local/indexes.conf
+         - ./splunk_dev/inputs.conf:/opt/splunk/etc/apps/splunk_httpinput/local/inputs.conf
+         - ./splunk_dev/web.conf:/opt/splunk/etc/system/local/web.conf
+    environment:
+          SPLUNK_USER: root
+          SPLUNK_START_ARGS: --accept-license --answer-yes
+          SPLUNK_ENABLE_LISTEN: 9997
+          SPLUNK_ADD: tcp 1514
+          SPLUNK_CMD_1: "set minfreemb 500 -auth admin:changeme"
+          SPLUNK_CMD_2: "edit user admin -tz Asia/Shanghai -auth admin:changeme"
+          SPLUNK_CMD_3: "restart"
+    ports:
+         - "8081:8000"
+         - "8088:8088"
+
+mongo:
+   image: mongo:3.4
+   container_name: mongo
+   restart: always
+   volumes:
+        - ./mongo_dev:/data/db
+   environment:
+        - TZ=Asia/Shanghai
+   command: /data/db/init.sh
+   ports:
+       - 27017:27017
+

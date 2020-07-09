@@ -1,0 +1,15 @@
+.idea
+db.sqlite3
+__pycache__
+/static
+*.out
+*.log
+*.pid
+.cache
+.coverage
+htmlcov
+.idea/*
+.pyc
+venv/
+venv/
+admin/

@@ -1,0 +1,9 @@
+django==1.11.16
+uwsgi==2.0.15
+django-extensions==1.9.8
+requests==2.18.4
+python-json-logger==0.1.8
+sanic==0.7.0
+celery==4.1.0
+kombu==4.1.0
+pypinyin==0.35.4
