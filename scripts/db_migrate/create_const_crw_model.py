@@ -12,4 +12,6 @@ def run():
     with connection.schema_editor() as schema_editor:
         # 创建
         schema_editor.create_model(models.AdUserProfileFeatureV20200709Cld)
+        schema_editor.create_model(models.OnlineBrandAdV20200709Cld)
+        schema_editor.create_model(models.AdBlackUidV20200710Cld)
 
