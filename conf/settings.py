@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_extensions',
     'applications.api',
-    'applications.orms'
+    'applications.orms',
+    'suit'
 ]
 
 MIDDLEWARE = [
