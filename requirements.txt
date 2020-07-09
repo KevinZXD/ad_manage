@@ -8,3 +8,4 @@ celery==4.1.0
 kombu==4.1.0
 pypinyin==0.35.4
 django-suit
+retrying
