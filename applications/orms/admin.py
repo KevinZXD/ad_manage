@@ -1,5 +1,5 @@
 from django.contrib import admin
-
+from applications.api.signals import *
 from applications.orms.crw_model import ConstConfigureV20191017Crw, AdBlackUidV20200710Cld, OnlineBrandAdV20200709Cld, \
     AdUserProfileFeatureV20200709Cld
 
