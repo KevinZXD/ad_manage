@@ -9,3 +9,4 @@ kombu==4.1.0
 pypinyin==0.35.4
 django-suit==0.2.28
 retrying
+django_redis==4.12.1
