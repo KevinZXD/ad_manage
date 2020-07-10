@@ -7,7 +7,6 @@ from applications.orms.crw_model import ConstConfigureV20191017Crw, AdBlackUidV2
 def run():
     """常量数据配置表"""
     cc_obj = ConstConfigureV20191017Crw()
-    cc_obj.cc_id = 1
     cc_obj.cc_name_en = 'scene_map'
     cc_obj.cc_name_ch = "场景映射"
     cc_obj.cc_value = json.dumps({
@@ -16,14 +15,12 @@ def run():
     cc_obj.save(using='crw')
 
     cc_obj = ConstConfigureV20191017Crw()
-    cc_obj.cc_id = 1
     cc_obj.cc_name_en = '流量降级开关'
     cc_obj.cc_name_ch = "flow_control"
     cc_obj.cc_value = "false"
     cc_obj.save(using='crw')
 
     cc_obj = ConstConfigureV20191017Crw()
-    cc_obj.cc_id = 1
     cc_obj.cc_name_en = '流量业务策略'
     cc_obj.cc_name_ch = "场景映射"
     cc_obj.cc_value = json.dumps({
