@@ -109,28 +109,28 @@ DATABASES = {
 CACHES = {
     "yys": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://redispassword:@127.0.0.1:6379/8",
+        "LOCATION": "redis://:redispassword@127.0.0.1:6379/8",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
     },
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://redispassword:@127.0.0.1:6379/13",
+        "LOCATION": "redis://:redispassword@127.0.0.1:6379/13",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
     },
     "celery_broker": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://redispassword:@127.0.0.1:6379/14",
+        "LOCATION": "redis://:redispassword@127.0.0.1:6379/14",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
     },
     "celery_backend": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://redispassword:@127.0.0.1:6379/15",
+        "LOCATION": "redis://:redispassword@127.0.0.1:6379/15",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
