@@ -15,6 +15,24 @@ def run():
     })
     cc_obj.save(using='crw')
 
+    cc_obj = ConstConfigureV20191017Crw()
+    cc_obj.cc_id = 1
+    cc_obj.cc_name_en = '流量降级开关'
+    cc_obj.cc_name_ch = "flow_control"
+    cc_obj.cc_value = "false"
+    cc_obj.save(using='crw')
+
+    cc_obj = ConstConfigureV20191017Crw()
+    cc_obj.cc_id = 1
+    cc_obj.cc_name_en = '流量业务策略'
+    cc_obj.cc_name_ch = "场景映射"
+    cc_obj.cc_value = json.dumps({
+        '01': ['业务策略1', '业务策略2'],
+        '02': ['业务策略3', '业务策略4'],
+        '03': ['业务策略5', '业务策略6'],
+    })
+    cc_obj.save(using='crw')
+
     ad_black = AdBlackUidV20200710Cld()
     ad_black.ad_b_is_redis_cache = 1
     ad_black.ad_b_ch = "小米公司"
