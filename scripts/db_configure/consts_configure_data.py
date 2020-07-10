@@ -11,7 +11,6 @@ def run():
     cc_obj.cc_name_ch = "场景映射"
     cc_obj.cc_value = json.dumps({
         'mainfeed': ['sfst', 'douyin'],
-
     })
     cc_obj.save(using='crw')
 
