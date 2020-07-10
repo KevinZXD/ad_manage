@@ -85,21 +85,21 @@ def run():
     black.save(using='cld')
 
     user = AdUserProfileFeatureV20200709Cld()
-    user.u_ch = '用户名字1'
+    user.u_ch = '张三'
     user.u_en = '10001'
     user.u_value = json.dumps({'age': '11', 'area': '北京', 'device': '安卓', 'sex': '男', 'hobby': '篮球', 'tag': '喜欢购物'})
     user.u_is_redis_cache = 1
     user.save(using='cld')
 
     user = AdUserProfileFeatureV20200709Cld()
-    user.u_ch = '用户名字2'
+    user.u_ch = '李四'
     user.u_en = '10002'
     user.u_value = json.dumps({'age': '12', 'area': '上海', 'device': 'ios', 'sex': '女', 'hobby': '裙子', 'tag': '喜欢美食'})
     user.u_is_redis_cache = 1
     user.save(using='cld')
 
     user = AdUserProfileFeatureV20200709Cld()
-    user.u_ch = '用户名字3'
+    user.u_ch = '王五'
     user.u_en = '10003'
     user.u_value = json.dumps({'age': '27', 'area': '成都', 'device': 'ios', 'sex': '女', 'hobby': '汽车', 'tag': '喜欢汽车'})
     user.u_is_redis_cache = 1
