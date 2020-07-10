@@ -50,6 +50,7 @@ def handle_brand_cache(instance, **kwargs):
         # 原生redis
         RedisManager.hash_set(key=consts_field, value=consts_value, name='ad_online_brand')
 
+
 @receiver(post_save, sender=AdBlackUidV20200710Cld)
 def handle_ad_black_cache(instance, **kwargs):
     # pylint:disable=unused-argument
@@ -63,4 +64,3 @@ def handle_ad_black_cache(instance, **kwargs):
     if is_redis_cache:
         # 原生redis
         RedisManager.hash_set(key=consts_field, value=consts_value, name='ad_black_uids')
-

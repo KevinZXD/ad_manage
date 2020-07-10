@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 import sys
-
+import socket
 import pymysql
 
 pymysql.install_as_MySQLdb()
@@ -235,13 +235,24 @@ EMAIL_REVICER = []
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 RECEIVER_EMAIL_GROUP = []
 
-
-
-
 ES_ADDR = '127.0.0.1'
 ES_PORT = '9200'
 ELK_USERNAME = ''
 ELK_PWD = ''
 
 # mongo数据库配置　
+# Date format
+DATE_FORMAT = SHORT_DATE_FORMAT = 'Y年n月j日'
+DATE_INPUT_FORMATS = ('%Y-%m-%d',)
+DATETIME_FORMAT = SHORT_DATETIME_FORMAT = 'Y年n月j日 H:i:s'
+DATETIME_INPUT_FORMATS = ('%Y-%m-%d %H:%M:%S',)
+TIME_FORMAT = 'H:i:s'
+TIME_INPUT_FORMATS = ('%H:%M:%S',)
+# Django suit
+SUIT_CONFIG = {
+    'ADMIN_NAME': '广告流量管理系统',
+    'HEADER_DATE_FORMAT': DATE_FORMAT,
+}
 
+# 主机名
+HOST_NAME = socket.gethostname()

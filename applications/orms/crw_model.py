@@ -107,7 +107,7 @@ class OnlineBrandAdV20200709Cld(models.Model):
 class AdBlackUidV20200710Cld(models.Model):
     ad_b_id = models.AutoField(primary_key=True, verbose_name="主键")
     ad_b_ch = models.CharField(max_length=255, verbose_name='广告黑名单中文')
-    ad_b_en = models.CharField(unique=True, max_length=255, verbose_name='广告黑名单　英文')
+    ad_b_en = models.CharField(unique=True, max_length=255, verbose_name='广告黑名单英文')
     ad_b_value = models.TextField(verbose_name='黑名单数据')
     ad_b_create_time = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
     ad_b_modify_time = models.DateTimeField(auto_now=True, verbose_name='更新时间')
