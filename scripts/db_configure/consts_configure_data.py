@@ -41,7 +41,7 @@ def run():
     brand.ob_ad_bid = 'brand_1'
     brand.ob_ad_name = '雅诗兰黛'
     brand.ob_ad_de_name = '润肤精华液'
-    brand.ob_ad_data = json.dump({'image': 'image'})
+    brand.ob_ad_data = json.dumps({'image': 'image'})
     brand.ob_ad_budget = 888888
     brand.save(using='cld')
 
@@ -50,7 +50,7 @@ def run():
     brand.ob_ad_bid = 'brand_2'
     brand.ob_ad_name = '北京现代汽车'
     brand.ob_ad_de_name = 'suv旗舰版'
-    brand.ob_ad_data = json.dump({'image': 'image'})
+    brand.ob_ad_data = json.dumps({'image': 'image'})
     brand.ob_ad_budget = 66666
     brand.save(using='cld')
 
@@ -59,27 +59,27 @@ def run():
     brand.ob_ad_bid = 'brand_3'
     brand.ob_ad_name = '肯德基'
     brand.ob_ad_de_name = '肯德基夏日套餐'
-    brand.ob_ad_data = json.dump({'image': 'image'})
+    brand.ob_ad_data = json.dumps({'image': 'image'})
     brand.ob_ad_budget = 555555
     brand.save(using='cld')
 
     black = AdBlackUidV20200710Cld()
     black.ad_b_ch = '雅诗兰黛黑名单'
     black.ad_b_en = 'yashi_black'
-    black.ad_b_value = json.dump(['021', '032', '043'])
+    black.ad_b_value = json.dumps(['021', '032', '043'])
     black.ad_b_is_redis_cache = 1
     black.save(using='cld')
 
     black = AdBlackUidV20200710Cld()
     black.ad_b_ch = '北京现代黑名单'
     black.ad_b_en = 'beijing_black'
-    black.ad_b_value = json.dump(['021', '032', '043'])
+    black.ad_b_value = json.dumps(['021', '032', '043'])
     black.ad_b_is_redis_cache = 1
     black.save(using='cld')
 
     black = AdBlackUidV20200710Cld()
     black.ad_b_ch = '肯德基黑名单'
     black.ad_b_en = 'kfc_black'
-    black.ad_b_value = json.dump(['021', '032', '043'])
+    black.ad_b_value = json.dumps(['021', '032', '043'])
     black.ad_b_is_redis_cache = 1
     black.save(using='cld')
