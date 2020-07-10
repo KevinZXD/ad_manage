@@ -19,21 +19,21 @@ def run():
     ad_black.ad_b_is_redis_cache = 1
     ad_black.ad_b_ch = "小米公司"
     ad_black.ad_b_en = "Redmi"
-    ad_black.ad_b_value = json.dumps({'001', '002', '003'})
+    ad_black.ad_b_value = json.dumps(['001', '002', '003'])
     ad_black.save(using='cld')
 
     ad_black = AdBlackUidV20200710Cld()
     ad_black.ad_b_is_redis_cache = 1
     ad_black.ad_b_ch = "华为荣耀"
     ad_black.ad_b_en = "P30"
-    ad_black.ad_b_value = json.dumps({'007', '008', '009'})
+    ad_black.ad_b_value = json.dumps(['007', '008', '009'])
     ad_black.save(using='cld')
 
     ad_black = AdBlackUidV20200710Cld()
     ad_black.ad_b_is_redis_cache = 1
     ad_black.ad_b_ch = "oppo公司"
     ad_black.ad_b_en = "R9"
-    ad_black.ad_b_value = json.dumps({'021', '032', '043'})
+    ad_black.ad_b_value = json.dumps(['021', '032', '043'])
     ad_black.save(using='cld')
 
     brand = OnlineBrandAdV20200709Cld()
@@ -66,20 +66,20 @@ def run():
     black = AdBlackUidV20200710Cld()
     black.ad_b_ch = '雅诗兰黛黑名单'
     black.ad_b_en = 'yashi_black'
-    black.ad_b_value = json.dump({'021', '032', '043'})
+    black.ad_b_value = json.dump(['021', '032', '043'])
     black.ad_b_is_redis_cache = 1
     black.save(using='cld')
 
     black = AdBlackUidV20200710Cld()
     black.ad_b_ch = '北京现代黑名单'
     black.ad_b_en = 'beijing_black'
-    black.ad_b_value = json.dump({'021', '032', '043'})
+    black.ad_b_value = json.dump(['021', '032', '043'])
     black.ad_b_is_redis_cache = 1
     black.save(using='cld')
 
     black = AdBlackUidV20200710Cld()
     black.ad_b_ch = '肯德基黑名单'
     black.ad_b_en = 'kfc_black'
-    black.ad_b_value = json.dump({'021', '032', '043'})
+    black.ad_b_value = json.dump(['021', '032', '043'])
     black.ad_b_is_redis_cache = 1
     black.save(using='cld')
