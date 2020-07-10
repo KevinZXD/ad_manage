@@ -41,7 +41,7 @@ def run():
     brand.ob_ad_bid = 'brand_1'
     brand.ob_ad_name = '雅诗兰黛'
     brand.ob_ad_de_name = '润肤精华液'
-    brand.ob_ad_data = json.dumps({'image': 'image'})
+    brand.ob_ad_data = json.dumps({"product":"雅诗兰黛","version":"v2","name":"润肤精华液","monitor_url":"监控链接"})
     brand.ob_ad_budget = 888888
     brand.save(using='cld')
 
@@ -50,7 +50,7 @@ def run():
     brand.ob_ad_bid = 'brand_2'
     brand.ob_ad_name = '北京现代汽车'
     brand.ob_ad_de_name = 'suv旗舰版'
-    brand.ob_ad_data = json.dumps({'image': 'image'})
+    brand.ob_ad_data = json.dumps({"product":"北京现代汽车","version":"v2","name":"北京现代汽车","monitor_url":"监控链接"})
     brand.ob_ad_budget = 66666
     brand.save(using='cld')
 
@@ -59,7 +59,7 @@ def run():
     brand.ob_ad_bid = 'brand_3'
     brand.ob_ad_name = '肯德基'
     brand.ob_ad_de_name = '肯德基夏日套餐'
-    brand.ob_ad_data = json.dumps({'image': 'image'})
+    brand.ob_ad_data = json.dumps({"product":"kfc","version":"v1","name":"肯德基","monitor_url":"监控链接"})
     brand.ob_ad_budget = 555555
     brand.save(using='cld')
 
