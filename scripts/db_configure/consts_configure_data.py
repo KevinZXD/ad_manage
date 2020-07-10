@@ -8,7 +8,7 @@ def run():
     cc_obj = ConstConfigureV20191017Crw()
     cc_obj.cc_id = 1
     cc_obj.cc_name_en = 'scene_map'
-    cc_obj.cc_name_ch = "HYUK服务依赖关系字典(不包含　对运营商依赖)"
+    cc_obj.cc_name_ch = "场景映射"
     cc_obj.cc_value = json.dumps({
         'mainfeed': ['sfst', 'douyin'],
 
