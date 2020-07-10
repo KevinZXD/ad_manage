@@ -1,6 +1,7 @@
 import json
 
-from applications.orms.crw_model import ConstConfigureV20191017Crw, AdBlackUidV20200710Cld, OnlineBrandAdV20200709Cld
+from applications.orms.crw_model import ConstConfigureV20191017Crw, AdBlackUidV20200710Cld, OnlineBrandAdV20200709Cld, \
+    AdUserProfileFeatureV20200709Cld
 
 
 def run():
@@ -82,3 +83,24 @@ def run():
     black.ad_b_value = json.dumps(['021', '032', '043'])
     black.ad_b_is_redis_cache = 1
     black.save(using='cld')
+
+    user = AdUserProfileFeatureV20200709Cld()
+    user.u_ch = '用户名字1'
+    user.u_en = '10001'
+    user.u_value = json.dumps({'age': '11', 'area': '北京', 'device': '安卓', 'sex': '男', 'hobby': '篮球', 'tag': '喜欢购物'})
+    user.u_is_redis_cache = 1
+    user.save(using='cld')
+
+    user = AdUserProfileFeatureV20200709Cld()
+    user.u_ch = '用户名字2'
+    user.u_en = '10002'
+    user.u_value = json.dumps({'age': '12', 'area': '上海', 'device': 'ios', 'sex': '女', 'hobby': '裙子', 'tag': '喜欢美食'})
+    user.u_is_redis_cache = 1
+    user.save(using='cld')
+
+    user = AdUserProfileFeatureV20200709Cld()
+    user.u_ch = '用户名字3'
+    user.u_en = '10003'
+    user.u_value = json.dumps({'age': '27', 'area': '成都', 'device': 'ios', 'sex': '女', 'hobby': '汽车', 'tag': '喜欢汽车'})
+    user.u_is_redis_cache = 1
+    user.save(using='cld')

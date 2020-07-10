@@ -40,8 +40,8 @@ class ConstConfigureV20191017Crw(models.Model):
 class AdUserProfileFeatureV20200709Cld(models.Model):
     """用户基本画像"""
     u_id = models.AutoField(primary_key=True, verbose_name="主键")
-    u_ch = models.CharField(max_length=255, verbose_name='用户 中文')
-    u_en = models.CharField(unique=True, max_length=255, verbose_name='用户　英文')
+    u_ch = models.CharField(max_length=255, verbose_name='用户中文')
+    u_en = models.CharField(unique=True, max_length=255, verbose_name='用户英文')
     u_value = models.TextField(verbose_name='用户基本画像')
     u_create_time = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
     u_modify_time = models.DateTimeField(auto_now=True, verbose_name='更新时间')
