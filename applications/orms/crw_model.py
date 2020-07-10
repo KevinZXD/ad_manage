@@ -59,7 +59,7 @@ class AdUserProfileFeatureV20200709Cld(models.Model):
     @staticmethod
     def gain_u_value(u_en):
         """根据值　获取结果"""
-        u_value = AdUserProfileFeatureV20200709Cld.objects.get(u_en=u_en).cc_value
+        u_value = AdUserProfileFeatureV20200709Cld.objects.get(u_en=u_en).u_value
         return json.loads(u_value)
 
     @staticmethod
