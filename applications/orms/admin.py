@@ -16,7 +16,9 @@ class AdBlackUidV20200710CldAdmin(admin.ModelAdmin):
 
 class OnlineBrandAdV20200709CldAdmin(admin.ModelAdmin):
     """品牌广告"""
-    list_display = ('ob_ad_id', 'ob_ad_bid', 'ob_ad_name', 'ob_ad_de_name', 'ob_ad_data', 'ob_ad_deliver_time','ob_ad_end_time','ob_ad_budget')
+    list_display = (
+        'ob_ad_id', 'ob_ad_bid', 'ob_ad_name', 'ob_ad_de_name', 'ob_ad_data', 'ob_ad_deliver_time', 'ob_ad_end_time',
+        'ob_ad_budget')
 
 
 class AdUserProfileFeatureV20200709CldAdmin(admin.ModelAdmin):
@@ -26,6 +28,9 @@ class AdUserProfileFeatureV20200709CldAdmin(admin.ModelAdmin):
 
 # 注册常量配置表
 admin.site.register(ConstConfigureV20191017Crw, ConstConfigureV20190320InfAdmin)
+# 注册广告黑名单
 admin.site.register(AdBlackUidV20200710Cld, AdBlackUidV20200710CldAdmin)
+# 注册品牌广告
 admin.site.register(OnlineBrandAdV20200709Cld, OnlineBrandAdV20200709CldAdmin)
+# 注册用户基本画像
 admin.site.register(AdUserProfileFeatureV20200709Cld, AdUserProfileFeatureV20200709CldAdmin)
